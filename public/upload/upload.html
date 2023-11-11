@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link id="favicon" rel="icon" href="https://cdn.glitch.global/09cea16e-eb78-4d1a-81a4-6b24ad8afe1c/favicon.ico?v=1698655501304" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="upload.js"></script>
+  <script src="/common/color-mode.js"></script>
+  
+  <link rel="stylesheet" href="upload.css">
+  <link rel="stylesheet" href="/common/style-dark.css">
+  <script src="https://kit.fontawesome.com/6135f8c6a5.js" crossorigin="anonymous"></script>
+  <title>Upload Music</title>
+</head>
+<body>
+  <div class="widget container">
+    <h1>Upload Music</h1>
+    <hr>
+    
+    <form name="uploadForm" id="uploadForm" class="upload-form">
+      <input type="file" name="musicFile" id="fileInput" class="file-input" accept="audio/mp3,audio/ogg" style="display: none">
+      <label for="fileInput" class="custom-file-input">Choose a file</label>
+      <span id="selectedFileName" class="file-name">No file selected</span>
+      <input type="submit" value="Upload" id="uploadButton" class="upload-button" style="display: none">
+    </form>
+    
+    <div class="progress-container" id="progressContainer">
+      <progress id="progressBar" class="file-progress" value="0" max="100"></progress>
+      <span id="progressText" class="progress-text">0%</span>
+    </div>
+    
+    <div id="successBox" class="result-box">
+      <p class="success-text">File uploaded successfully!</p>
+      <p class="url-text">URL: <a id="fileURL" href="#" target="_blank" style="color: CornflowerBlue"></a></p>
+      <button id="copyURLButton" class="copy-button">Copy URL</button> <br>
+      <br>
+      <button id="reloadButton" class="reload-button" onclick="location.reload()">Upload another one</button>
+    </div>
+    
+    <div id="errorBox" class="result-box" style>
+      <p class="error-text">Unable to upload file</p>
+      <p>A error occured while uploading the file. There may be not enough space to upload. </p>
+      <p id="errorMessage"></p>
+      
+      <button class="reload-button" onclick="location.reload()">Try again</button>
+    </div>
+  </div>
+  
+  <div class="widget container">
+    <h1>User Uploaded</h1>
+    <hr>
+    <div id="musicList" class="music-list">
+      
+    </div>
+  </div>
+  
+  <div class="theme-toggle" id="theme-toggle">
+    <span class="theme-icon" id="theme-icon">
+      <i class="fas fa-moon"></i>
+    </span>
+  </div>
+
+</body>
+</html>
